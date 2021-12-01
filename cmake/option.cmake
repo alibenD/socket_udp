@@ -23,6 +23,8 @@
   option(BUILD_SHARED_LIBS "Build shared libraries" ON)
 
 # CMake Build System Default Setup
+if(CMAKE_BUILD_TYPE)
+else()
   set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Default Build Type" FORCE)
   set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS Release Debug RelWithDebInfo MinSizeRel)
-
+endif()
